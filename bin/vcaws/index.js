@@ -5,9 +5,9 @@ import { Command } from 'commander';
 
 // lib imports
 import {
-  cli,
   createSecrets,
   deleteSecrets,
+  getCli,
   redrive,
   retrieveCognito,
   retrieveSecrets,
@@ -28,6 +28,9 @@ const aws = new Command()
   .addCommand(updateAmplify)
   .addCommand(redrive);
 
-cli.addCommand(aws);
+const cli = getCli({
+  dynamicPath: './env/dynamic.js',
+  paths: ['./', './env'],
+}).addCommand(aws);
 
 await cli.parseAsync();
