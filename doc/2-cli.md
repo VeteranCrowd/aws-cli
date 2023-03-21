@@ -1,11 +1,35 @@
 # Command Line Interface
 
 ```text
-Usage: mycli [options]
-
-Foos your bar.
+Usage: npm run cli --- [cli options] [options] [command]
 
 Options:
-  -b, --bar <string>  foo what?
-  -h, --help          display help for command
+  -e, --env <string>        environment (default: "dev")
+  -l, --log-level <string>  max log level (default: "info")
+  -h, --help                display help for command
+
+Commands:
+  aws                       AWS-related commands
+  help [command]            display help for command
+```
+
+## AWS
+
+```text
+Usage: npm run cli --- [cli options] aws [options] [command]
+
+AWS-related commands
+
+Options:
+  -h, --help                display help for command
+
+Commands:
+  create-secrets [options]  Create stack secrets from environment variables.
+  retrieve-secrets          Retrieve stack secrets and store in .env files.
+  update-secrets [options]  Update stack secrets from environment variables.
+  delete-secrets            Delete stack secrets.
+  retrieve-cognito          Updates an environment's .env.local file with Cognito user pool details
+  update-amplify [options]  Update Amplify secrets from environment variables.
+  redrive [options]         Redrive a CRUD operation DLQ message.
+  help [command]            display help for command
 ```
