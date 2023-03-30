@@ -6,6 +6,7 @@
   },
   "extends": [
     "eslint:recommended",
+    "plugin:import/recommended",
     "plugin:jsdoc/recommended",
     "plugin:mocha/recommended",
     "plugin:promise/recommended"
@@ -22,6 +23,7 @@
   },
   "plugins": ["mocha", "promise"],
   "rules": {
+    "import/extensions": ["error", "ignorePackages"],
     "jsdoc/check-tag-names": "off",
     "mocha/no-top-level-hooks": "off"
   },
