@@ -33,3 +33,18 @@ Commands:
   redrive [options]         Redrive a CRUD operation DLQ message.
   help [command]            display help for command
 ```
+
+## Dev Environment
+
+```text
+Usage: npm run cli --- [cli options] dev [options] [command]
+
+Development environment commands
+
+Options:
+  -h, --help         display help for command
+
+Commands:
+  typegen [options]  Generate types from environment variables.
+  help [command]     display help for command
+```

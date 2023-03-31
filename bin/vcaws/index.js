@@ -11,6 +11,7 @@ import {
   redrive,
   retrieveCognito,
   retrieveSecrets,
+  typegen,
   updateAmplify,
   updateSecrets,
 } from '../../lib/index.js';
@@ -28,9 +29,18 @@ const aws = new Command()
   .addCommand(updateAmplify)
   .addCommand(redrive);
 
+const dev = new Command()
+  .name('dev')
+  .description('Development environment commands')
+  .enablePositionalOptions()
+  .passThroughOptions()
+  .addCommand(typegen);
+
 const cli = getCli({
   dynamicPath: './env/dynamic.js',
   paths: ['./', './env'],
-}).addCommand(aws);
+})
+  .addCommand(aws)
+  .addCommand(dev);
 
 await cli.parseAsync();
