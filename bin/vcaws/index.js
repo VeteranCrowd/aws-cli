@@ -38,6 +38,7 @@ const local = new Command()
 
 const cli = getCli({
   dynamicPath: './env/dynamic.js',
+  env: 'dev',
   paths: ['./', './env'],
 })
   .addCommand(aws)
