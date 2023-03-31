@@ -3,23 +3,25 @@
 ```text
 Usage: npm run cli --- [cli options] [options] [command]
 
+Base CLI. Set paths to load dotenvs.
+
 Options:
-  -p, --paths <strings...>           space-delimited paths to dotenv directory (default './')
+  -l, --log-level <string>           max log level (default: "info")
+  -p, --paths <strings...>           space-delimited paths to dotenv directory
   -t, --dotenv-token <string>        token indicating a dotenv file (default: '.env')
   -i, --private-token <string>       token indicating private variables (default: 'local')
   -d, --defaultEnvironment <string>  default environment
-  -e, --environment <string>         environment (default: "dev")
+  -e, --environment <string>         environment
   -v, --variable <string>            environment from variable
   -r, --exclude-private              exclude private variables (default: false)
   -u, --exclude-public               exclude public variables (default: false)
   -y, --dynamic-path <string>        dynamic variables path
-  -l, --log-level <string>           max log level (default: "info")
   -s, --show                         show extracted variables (default: false)
   -h, --help                         display help for command
 
 Commands:
   aws                                AWS-related commands
-  dev                                Development environment commands
+  local                              Local dev environment commands
   help [command]                     display help for command
 ```
 
