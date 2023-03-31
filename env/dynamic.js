@@ -4,4 +4,12 @@
     `${API_SUBDOMAIN}-${API_CONTEXT}`,
   STACK_NAME: ({ API_VERSION, ENV, SERVICE_NAME }) =>
     `${SERVICE_NAME}-${API_VERSION}-${ENV}`,
+  USER_OPENAPI_URL: ({ PROD_ENV_TOKEN, ROOT_DOMAIN, USER_STACK_NAME }) => {
+    const { subdomain, basePath, env } = USER_STACK_NAME.match(
+      /^(?<subdomain>[^-]+)-(?<basePath>.+)-(?<env>[^-]+)$/
+    ).groups;
+    return `https://${subdomain}.${ROOT_DOMAIN}/${basePath}${
+      env === PROD_ENV_TOKEN ? '' : `-${env}`
+    }/doc/openapi`;
+  },
 });
