@@ -8,13 +8,23 @@ A handy CLI commands that supports common AWS operations.
 Usage: npm run cli --- [cli options] [options] [command]
 
 Options:
-  -e, --env <string>        environment (default: "dev")
-  -l, --log-level <string>  max log level (default: "info")
-  -h, --help                display help for command
+  -p, --paths <strings...>           space-delimited paths to dotenv directory (default './')
+  -t, --dotenv-token <string>        token indicating a dotenv file (default: '.env')
+  -i, --private-token <string>       token indicating private variables (default: 'local')
+  -d, --defaultEnvironment <string>  default environment
+  -e, --environment <string>         environment (default: "dev")
+  -v, --variable <string>            environment from variable
+  -r, --exclude-private              exclude private variables (default: false)
+  -u, --exclude-public               exclude public variables (default: false)
+  -y, --dynamic-path <string>        dynamic variables path
+  -l, --log-level <string>           max log level (default: "info")
+  -s, --show                         show extracted variables (default: false)
+  -h, --help                         display help for command
 
 Commands:
-  aws                       AWS-related commands
-  help [command]            display help for command
+  aws                                AWS-related commands
+  dev                                Development environment commands
+  help [command]                     display help for command
 ```
 
 ## AWS
