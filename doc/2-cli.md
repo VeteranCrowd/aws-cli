@@ -7,6 +7,7 @@ Base CLI. Set paths to load dotenvs.
 
 Options:
   -l, --log-level <string>           max log level (default: "info")
+  -x, --suppress-defaults            suppress default getdotenv options
   -p, --paths <strings...>           space-delimited paths to dotenv directory
   -t, --dotenv-token <string>        token indicating a dotenv file (default: '.env')
   -i, --private-token <string>       token indicating private variables (default: 'local')
