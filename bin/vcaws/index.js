@@ -29,9 +29,9 @@ const aws = new Command()
   .addCommand(updateAmplify)
   .addCommand(redrive);
 
-const dev = new Command()
-  .name('dev')
-  .description('Development environment commands')
+const local = new Command()
+  .name('local')
+  .description('Local dev environment commands')
   .enablePositionalOptions()
   .passThroughOptions()
   .addCommand(typegen);
@@ -41,6 +41,6 @@ const cli = getCli({
   paths: ['./', './env'],
 })
   .addCommand(aws)
-  .addCommand(dev);
+  .addCommand(local);
 
 await cli.parseAsync();
