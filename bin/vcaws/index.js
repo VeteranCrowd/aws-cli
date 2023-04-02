@@ -5,15 +5,13 @@ import { Command } from 'commander';
 
 // lib imports
 import {
-  createSecrets,
-  deleteSecrets,
+  deleteSecret,
   getCli,
+  pullCognito,
+  pullSecret,
+  pushSecret,
   redrive,
-  retrieveCognito,
-  retrieveSecrets,
   typegen,
-  updateAmplify,
-  updateSecrets,
 } from '../../lib/index.js';
 
 const aws = new Command()
@@ -21,17 +19,15 @@ const aws = new Command()
   .description('AWS-related commands')
   .enablePositionalOptions()
   .passThroughOptions()
-  .addCommand(createSecrets)
-  .addCommand(retrieveSecrets)
-  .addCommand(updateSecrets)
-  .addCommand(deleteSecrets)
-  .addCommand(retrieveCognito)
-  .addCommand(updateAmplify)
+  .addCommand(deleteSecret)
+  .addCommand(pullCognito)
+  .addCommand(pullSecret)
+  .addCommand(pushSecret)
   .addCommand(redrive);
 
 const local = new Command()
-  .name('local')
-  .description('Local dev environment commands')
+  .name('openapi')
+  .description('OpenAPI-related commands')
   .enablePositionalOptions()
   .passThroughOptions()
   .addCommand(typegen);

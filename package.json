@@ -25,8 +25,8 @@
     "@aws-sdk/client-amplify": "^3.303.0",
     "@aws-sdk/client-cognito-identity-provider": "^3.303.0",
     "@karmaniverous/edge-logger": "^1.2.0",
-    "@karmaniverous/get-dotenv": "^1.1.0",
-    "@veterancrowd/wrapped-secrets-manager-client": "^0.1.1",
+    "@karmaniverous/get-dotenv": "^1.2.0",
+    "@veterancrowd/wrapped-secrets-manager-client": "^0.2.0",
     "@veterancrowd/wrapped-sqs-client": "^0.2.2",
     "commander": "^10.0.0",
     "fs-extra": "^11.1.1",
@@ -47,12 +47,12 @@
     "eslint": "^8.37.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsdoc": "^40.1.0",
+    "eslint-plugin-jsdoc": "^40.1.1",
     "eslint-plugin-mocha": "^10.1.0",
     "jsdoc-to-markdown": "^8.0.0",
     "mocha": "^10.2.0",
     "prettier": "^2.8.7",
-    "release-it": "^15.9.3"
+    "release-it": "^15.10.0"
   },
   "exports": {
     ".": {
