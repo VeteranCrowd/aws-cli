@@ -7,6 +7,7 @@ import { Command } from 'commander';
 import {
   deleteSecret,
   getCli,
+  getdotenv,
   pullCognito,
   pullSecret,
   pushAmplify,
@@ -39,6 +40,7 @@ const cli = getCli({
   env: 'dev',
   paths: ['./', './env'],
 })
+  .addCommand(getdotenv)
   .addCommand(aws)
   .addCommand(local);
 
