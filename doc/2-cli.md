@@ -9,11 +9,13 @@ Options:
   -l, --log-level <string>           max log level (default: "info")
   -x, --suppress-defaults            suppress default getdotenv options
   -p, --paths <strings...>           space-delimited paths to dotenv directory
-  -t, --dotenv-token <string>        token indicating a dotenv file (default: '.env')
-  -i, --private-token <string>       token indicating private variables (default: 'local')
+  -t, --dotenv-token <string>        token indicating a dotenv file (default: '.env') (default: ".env")
+  -i, --private-token <string>       token indicating private variables (default: 'local') (default: "local")
   -d, --defaultEnvironment <string>  default environment
   -e, --environment <string>         environment
   -v, --variable <string>            environment from variable
+  -n, --exclude-env                  exclude environment-specific variables (default: false)
+  -g, --exclude-global               exclude global & dynamic variables (default: false)
   -r, --exclude-private              exclude private variables (default: false)
   -u, --exclude-public               exclude public variables (default: false)
   -y, --dynamic-path <string>        dynamic variables path
@@ -34,25 +36,23 @@ Usage: npm run cli --- [cli options] aws [options] [command]
 AWS-related commands
 
 Options:
-  -h, --help                display help for command
+  -h, --help               display help for command
 
 Commands:
-  create-secrets [options]  Create stack secrets from environment variables.
-  retrieve-secrets          Retrieve stack secrets and store in .env files.
-  update-secrets [options]  Update stack secrets from environment variables.
-  delete-secrets            Delete stack secrets.
-  retrieve-cognito          Updates an environment's .env.local file with Cognito user pool details
-  update-amplify [options]  Update Amplify secrets from environment variables.
-  redrive [options]         Redrive a CRUD operation DLQ message.
-  help [command]            display help for command
+  delete-secret [options]  Delete AWS Secrets Manager secret.
+  pull-cognito [options]   Create or update local private environment variables from Cognito User Pool details.
+  pull-secret [options]    Create or update local private environment variables from AWS Secrets Manager secret.
+  push-secret [options]    Create or update AWS Secrets Manager secret from local private environment variables.
+  redrive [options]        Redrive a CRUD operation DLQ message.
+  help [command]           display help for command
 ```
 
-## Dev Environment
+## OpenAPI
 
 ```text
-Usage: npm run cli --- [cli options] dev [options] [command]
+Usage: npm run cli --- [cli options] openapi [options] [command]
 
-Development environment commands
+OpenAPI-related commands
 
 Options:
   -h, --help         display help for command
