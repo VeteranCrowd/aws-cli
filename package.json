@@ -25,7 +25,7 @@
     "@aws-sdk/client-amplify": "^3.303.0",
     "@aws-sdk/client-cognito-identity-provider": "^3.303.0",
     "@karmaniverous/edge-logger": "^1.2.0",
-    "@karmaniverous/get-dotenv": "^2.0.3",
+    "@karmaniverous/get-dotenv": "^2.1.0",
     "@veterancrowd/wrapped-secrets-manager-client": "^0.2.0",
     "@veterancrowd/wrapped-sqs-client": "^0.2.2",
     "commander": "^10.0.0",
