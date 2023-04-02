@@ -9,6 +9,7 @@ import {
   getCli,
   pullCognito,
   pullSecret,
+  pushAmplify,
   pushSecret,
   redrive,
   typegen,
@@ -22,6 +23,7 @@ const aws = new Command()
   .addCommand(deleteSecret)
   .addCommand(pullCognito)
   .addCommand(pullSecret)
+  .addCommand(pushAmplify)
   .addCommand(pushSecret)
   .addCommand(redrive);
 
