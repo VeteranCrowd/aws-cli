@@ -52,11 +52,12 @@ Options:
   -h, --help               display help for command
 
 Commands:
-  delete-secret [options]  Delete AWS Secrets Manager secret.
-  pull-cognito [options]   Create or update local private environment variables from Cognito User Pool details.
   pull-secret [options]    Create or update local private environment variables from AWS Secrets Manager secret.
-  push-amplify [options]   Update Amplify app from local private environment variables.
   push-secret [options]    Create or update AWS Secrets Manager secret from local private environment variables.
+  delete-secret [options]  Delete AWS Secrets Manager secret.
+  pull-apikey [options]    Create or update local environment variable from API Key.
+  pull-cognito [options]   Create or update local environment variables from Cognito User Pool details.
+  push-amplify [options]   Update Amplify app from local private environment variables.
   redrive [options]        Redrive a CRUD operation DLQ message.
   help [command]           display help for command
 ```
