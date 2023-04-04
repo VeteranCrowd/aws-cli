@@ -8,9 +8,9 @@ Base CLI. Set paths to load dotenvs.
 Options:
   -p, --paths <strings...>           space-delimited paths to dotenv directory
   -y, --dynamic-path <string>        dynamic variables path
-  -o, --output-path <string>         consolidated output file
-  -e, --environment <string>         environment name (prefix with $ to use environment variable)
-  -d, --defaultEnvironment <string>  default environment (prefix with $ to use environment variable)
+  -o, --output-path <string>         consolidated output file (follows dotenv-expand rules using loaded env vars)
+  -e, --environment <string>         environment name (follows dotenv-expand rules)
+  -d, --defaultEnvironment <string>  default environment (follows dotenv-expand rules)
   -n, --exclude-env                  exclude environment-specific variables (default: false)
   -g, --exclude-global               exclude global & dynamic variables (default: false)
   -r, --exclude-private              exclude private variables (default: false)
