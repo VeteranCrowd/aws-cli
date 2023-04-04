@@ -21,11 +21,11 @@ const aws = new Command()
   .description('AWS-related commands')
   .enablePositionalOptions()
   .passThroughOptions()
+  .addCommand(pullSecret)
+  .addCommand(pushSecret)
   .addCommand(deleteSecret)
   .addCommand(pullCognito)
-  .addCommand(pullSecret)
   .addCommand(pushAmplify)
-  .addCommand(pushSecret)
   .addCommand(redrive);
 
 const local = new Command()
