@@ -23,6 +23,7 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "@aws-sdk/client-amplify": "^3.303.0",
+    "@aws-sdk/client-api-gateway": "^3.303.0",
     "@aws-sdk/client-cognito-identity-provider": "^3.303.0",
     "@karmaniverous/edge-logger": "^1.2.0",
     "@karmaniverous/get-dotenv": "^2.1.1",

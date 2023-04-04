@@ -8,6 +8,7 @@ import {
   deleteSecret,
   getCli,
   getdotenv,
+  pullApiKey,
   pullCognito,
   pullSecret,
   pushAmplify,
@@ -24,6 +25,7 @@ const aws = new Command()
   .addCommand(pullSecret)
   .addCommand(pushSecret)
   .addCommand(deleteSecret)
+  .addCommand(pullApiKey)
   .addCommand(pullCognito)
   .addCommand(pushAmplify)
   .addCommand(redrive);
