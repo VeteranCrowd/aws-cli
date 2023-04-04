@@ -22,9 +22,9 @@ Options:
   -z, --exclude-dynamic              exclude dynamic variables (default: false)
   -t, --dotenv-token <string>        token indicating a dotenv file (default: ".env")
   -i, --private-token <string>       token indicating private variables (default: "local")
+  -s, --log                          log extracted variables (default: false)
   -l, --log-level <string>           max log level (default: "info")
-  -s, --show                         show extracted variables (default: false)
-  -x, --suppress-defaults            suppress default getdotenv options
+  -x, --suppress-dotenv              suppress dotenv loading (default: false)
   -h, --help                         display help for command
 
 Commands:
