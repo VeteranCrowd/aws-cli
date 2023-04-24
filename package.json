@@ -29,6 +29,7 @@
     "@karmaniverous/get-dotenv": "^2.2.3",
     "@veterancrowd/wrapped-secrets-manager-client": "^0.2.0",
     "@veterancrowd/wrapped-sqs-client": "^0.2.2",
+    "ajv": "^8.12.0",
     "commander": "^10.0.0",
     "fs-extra": "^11.1.1",
     "lodash": "^4.17.21",

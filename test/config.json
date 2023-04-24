@@ -1,0 +1,18 @@
+[
+  {
+    "source": "https://api.veterancrowd.com/group-v0-dev/doc/openapi",
+    "target": "./test/group.d.ts"
+  },
+  {
+    "source": "https://api.veterancrowd.com/membership-v0-dev/doc/openapi",
+    "target": "./test/membership.d.ts"
+  },
+  {
+    "source": "https://api.veterancrowd.com/merchant-v0-dev/doc/openapi",
+    "target": "./test/merchant.d.ts"
+  },
+  {
+    "source": "https://api.veterancrowd.com/user-v0-dev/doc/openapi",
+    "target": "./test/user.d.ts"
+  }
+]
