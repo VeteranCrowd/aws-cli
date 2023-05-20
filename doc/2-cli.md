@@ -11,6 +11,7 @@ Options:
   -o, --output-path <string>         consolidated output file (follows dotenv-expand rules using loaded env vars)
   -e, --environment <string>         environment name (follows dotenv-expand rules)
   -d, --defaultEnvironment <string>  default environment (follows dotenv-expand rules)
+  -b, --branch-to-default            derive default environment from the current git branch (default: false)
   -n, --exclude-env                  exclude environment-specific variables (default: false)
   -g, --exclude-global               exclude global & dynamic variables (default: false)
   -r, --exclude-private              exclude private variables (default: false)
