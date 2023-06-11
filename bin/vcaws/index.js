@@ -6,6 +6,7 @@ import { Command } from 'commander';
 // lib imports
 import {
   deleteSecret,
+  flushApiCache,
   getCli,
   getdotenv,
   pullApiKey,
@@ -26,6 +27,7 @@ const aws = new Command()
   .addCommand(pushSecret)
   .addCommand(deleteSecret)
   .addCommand(pullApiKey)
+  .addCommand(flushApiCache)
   .addCommand(pullCognito)
   .addCommand(pushAmplify)
   .addCommand(redrive);
