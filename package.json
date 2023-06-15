@@ -3,7 +3,7 @@
   "bin": {
     "mycli": "bin/vcaws/index.js"
   },
-  "version": "3.6.2",
+  "version": "3.6.3",
   "publishConfig": {
     "access": "public"
   },
