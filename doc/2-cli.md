@@ -22,11 +22,12 @@ Options:
   -s, --log                          log extracted variables (default: false)
   -l, --log-level <string>           max log level (default: "info")
   -x, --suppress-dotenv              suppress dotenv loading (default: false)
+  -a, --aws-sso-profile <string>     local AWS SSO profile (follows dotenv-expand rules)
   -h, --help                         display help for command
 
 Commands:
   getdotenv                          Execute getdotenv.
-  aws                                AWS-related commands
+  aws                                AWS CLI.
   openapi                            OpenAPI-related commands
   help [command]                     display help for command
 ```

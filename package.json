@@ -26,7 +26,7 @@
     "@aws-sdk/client-api-gateway": "^3.357.0",
     "@aws-sdk/client-cognito-identity-provider": "^3.357.0",
     "@karmaniverous/edge-logger": "^1.2.0",
-    "@karmaniverous/get-dotenv": "^2.4.4",
+    "@karmaniverous/get-dotenv": "^2.6.0",
     "@veterancrowd/wrapped-secrets-manager-client": "^0.3.0",
     "@veterancrowd/wrapped-sqs-client": "^0.3.0",
     "ajv": "^8.12.0",
