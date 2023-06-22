@@ -7,6 +7,7 @@ import { Command } from 'commander';
 import {
   deleteSecret,
   flushApiCache,
+  getAws,
   getCli,
   getdotenv,
   pullApiKey,
@@ -18,11 +19,7 @@ import {
   typegen,
 } from '../../lib/index.js';
 
-const aws = new Command()
-  .name('aws')
-  .description('AWS-related commands')
-  .enablePositionalOptions()
-  .passThroughOptions()
+const aws = getAws()
   .addCommand(pullSecret)
   .addCommand(pushSecret)
   .addCommand(deleteSecret)
