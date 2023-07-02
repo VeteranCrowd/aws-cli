@@ -90,7 +90,7 @@
     "lint": "eslint lib/** bin/**",
     "prerelease": "npm run lint && npm run test && npm run build && npm run doc",
     "release": "release-it",
-    "test": "getdotenv -c \"mocha\" -p ./ ./env -d dev -y ./env/dynamic.js"
+    "test": "node ./bin/vc mocha"
   },
   "type": "module"
 }
