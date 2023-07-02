@@ -43,6 +43,7 @@ const local = new Command()
 const cli = getCli({
   defaultOptions: {
     dynamicPath: './env/dynamic.js',
+    env: 'dev',
     paths: './ ./env',
     vars: 'LOG_LEVEL=info',
   },
