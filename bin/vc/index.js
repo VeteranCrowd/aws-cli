@@ -43,7 +43,8 @@ const local = new Command()
 const cli = getCli({
   defaultOptions: {
     dynamicPath: './env/dynamic.js',
-    paths: ['./', './env'],
+    paths: './ ./env',
+    vars: 'LOG_LEVEL=info',
   },
   preHook: async (options) => {
     options.env ??= await parseBranch();
