@@ -46,7 +46,7 @@ const cli = getCli({
     paths: ['./', './env'],
   },
   preHook: async (options) => {
-    options.env ??= (await parseBranch())?.envToken;
+    options.env ??= await parseBranch();
     return options;
   },
   postHook: async () =>
