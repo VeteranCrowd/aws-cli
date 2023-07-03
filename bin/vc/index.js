@@ -13,9 +13,8 @@ import { pullSecret } from '../../lib/aws/pullSecret.js';
 import { pushAmplify } from '../../lib/aws/pushAmplify.js';
 import { pushSecret } from '../../lib/aws/pushSecret.js';
 import { redrive } from '../../lib/aws/redrive.js';
-import { typegen } from '../../lib/local/typegen.js';
-import { getAwsSsoCredentials } from '../../lib/getAwsSsoCredentials.js';
 import { defaultCliOptions } from '../../lib/defaultOptions.js';
+import { getAwsSsoCredentials } from '../../lib/getAwsSsoCredentials.js';
 
 const aws = new Command()
   .name('aws')
@@ -32,14 +31,6 @@ const aws = new Command()
   .addCommand(pushAmplify)
   .addCommand(redrive);
 
-const local = new Command()
-  .name('openapi')
-  .description('OpenAPI-related commands')
-  .configureHelp({ showGlobalOptions: true })
-  .enablePositionalOptions()
-  .passThroughOptions()
-  .addCommand(typegen);
-
 const cli = getCli({
   defaultOptions: defaultCliOptions,
   postHook: async () => {
@@ -48,6 +39,5 @@ const cli = getCli({
   },
 })
   .addCommand(aws)
-  .addCommand(local);
 
 await cli.parseAsync();
