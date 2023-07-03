@@ -42,8 +42,10 @@ const local = new Command()
 
 const cli = getCli({
   defaultOptions: defaultCliOptions,
-  postHook: async () =>
-    await getAwsSsoCredentials(process.env.AWS_LOCAL_PROFILE),
+  postHook: async () => {
+    if (process.env.AWS_LOCAL_PROFILE)
+      await getAwsSsoCredentials(process.env.AWS_LOCAL_PROFILE);
+  },
 })
   .addCommand(aws)
   .addCommand(local);
