@@ -1,81 +1,43 @@
 # Command Line Interface
 
 ```text
-Usage: npm run cli --- [cli options] [options] [command]
+Usage: vc [global options] [ [command] [command options] [ [subcommand] [subcommand options] ... ] ]
 
-Base CLI. Set paths to load dotenvs.
+Base CLI. All options except delimiters follow dotenv-expand rules.
 
 Options:
-  -p, --paths <strings...>           space-delimited paths to dotenv directory
-  -y, --dynamic-path <string>        dynamic variables path
-  -o, --output-path <string>         consolidated output file (follows dotenv-expand rules using loaded env vars)
-  -e, --environment <string>         environment name (follows dotenv-expand rules)
-  -d, --defaultEnvironment <string>  default environment (follows dotenv-expand rules)
-  -b, --branch-to-default            derive default environment from the current git branch (default: false)
-  -n, --exclude-env                  exclude environment-specific variables (default: false)
-  -g, --exclude-global               exclude global & dynamic variables (default: false)
-  -r, --exclude-private              exclude private variables (default: false)
-  -u, --exclude-public               exclude public variables (default: false)
-  -z, --exclude-dynamic              exclude dynamic variables (default: false)
-  -t, --dotenv-token <string>        token indicating a dotenv file (default: ".env")
-  -i, --private-token <string>       token indicating private variables (default: "local")
-  -s, --log                          log extracted variables (default: false)
-  -l, --log-level <string>           max log level (default: "info")
-  -x, --suppress-dotenv              suppress dotenv loading (default: false)
-  -a, --aws-sso-profile <string>     local AWS SSO profile (follows dotenv-expand rules)
-  -h, --help                         display help for command
+  -e, --env <string>           target environment
+  --default-env <string>       default target environment (default: "dev")
+  -p, --paths <string>         delimited list of paths to dotenv directory (default: "./ ./env")
+  --paths-delimiter <string>   regex paths delimiter (default: "\\s+")
+  -v, --vars <string>          delimited list KEY=VALUE pairs (default: "LOG_LEVEL=info")
+  --vars-delimiter <string>    regex vars delimiter (default: "\\s+")
+  --vars-assignor <string>     regex vars assignment operator (default: "=")
+  -y, --dynamic-path <string>  dynamic variables path (default: "./env/dynamic.js")
+  -o, --output-path <string>   consolidated output file, follows dotenv-expand rules using loaded env vars
+  -n, --exclude-env            exclude environment-specific variables
+  -N, --exclude-env-off        exclude environment-specific variables OFF (default)
+  -g, --exclude-global         exclude global variables
+  -G, --exclude-global-off     exclude global variables OFF (default)
+  -r, --exclude-private        exclude private variables
+  -R, --exclude-private-off    exclude private variables OFF (default)
+  -u, --exclude-public         exclude public variables
+  -U, --exclude-public-off     exclude public variables OFF (default)
+  -z, --exclude-dynamic        exclude dynamic variables
+  -Z, --exclude-dynamic-off    exclude dynamic variables OFF (default)
+  -l, --log                    console log extracted variables
+  -L, --log-off                console log extracted variables OFF (default)
+  -x, --suppress-dotenv        suppress dotenv loading (default: false)
+  -c, --command <string>       shell command string
+  -s, --shell <string>         execa shell option
+  --dotenv-token <string>      token indicating a dotenv file (default: ".env")
+  --private-token <string>     token indicating private variables (default: "local")
+  -D, --debug                  debug mode
+  -h, --help                   display help for command
 
 Commands:
-  getdotenv                          Execute getdotenv.
-  aws                                AWS CLI.
-  openapi                            OpenAPI-related commands
-  help [command]                     display help for command
-```
-
-## getdotenv
-
-```text
-Usage: npm run cli --- [cli options] getdotenv [options]
-
-Execute getdotenv.
-
-Options:
-  -h, --help  display help for command
-```
-
-## AWS
-
-```text
-Usage: npm run cli --- [cli options] aws [options] [command]
-
-AWS-related commands
-
-Options:
-  -h, --help                 display help for command
-
-Commands:
-  pull-secret [options]      Create or update local private environment variables from AWS Secrets Manager secret.
-  push-secret [options]      Create or update AWS Secrets Manager secret from local private environment variables.
-  delete-secret [options]    Delete AWS Secrets Manager secret.
-  pull-apikey [options]      Create or update local environment variable from API Key.
-  flush-api-cache [options]  Flushes a REST API stage cache.
-  pull-cognito [options]     Create or update local environment variables from Cognito User Pool details.
-  push-amplify [options]     Update Amplify app from local private environment variables.
-  redrive [options]          Redrive a CRUD operation DLQ message.
-  help [command]             display help for command
-```
-
-## OpenAPI
-
-```text
-Usage: npm run cli --- [cli options] openapi [options] [command]
-
-OpenAPI-related commands
-
-Options:
-  -h, --help         display help for command
-
-Commands:
-  typegen [options]  Generate types from environment variables.
-  help [command]     display help for command
+  cmd                          execute shell command string (default command)
+  aws                          AWS CLI.
+  openapi                      OpenAPI-related commands
+  help [command]               display help for command
 ```
