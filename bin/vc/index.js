@@ -14,8 +14,8 @@ import { pushAmplify } from '../../lib/aws/pushAmplify.js';
 import { pushSecret } from '../../lib/aws/pushSecret.js';
 import { redrive } from '../../lib/aws/redrive.js';
 import { typegen } from '../../lib/local/typegen.js';
-import { parseBranch } from '../../lib/parseBranch.js';
 import { getAwsSsoCredentials } from '../../lib/getAwsSsoCredentials.js';
+import { defaultCliOptions } from '../../lib/defaultOptions.js';
 
 const aws = new Command()
   .name('aws')
@@ -41,18 +41,7 @@ const local = new Command()
   .addCommand(typegen);
 
 const cli = getCli({
-  defaultOptions: {
-    cliInvocation: 'vc',
-    defaultEnv: 'dev',
-    dynamicPath: './env/dynamic.js',
-    paths: './ ./env',
-    vars: 'LOG_LEVEL=info',
-  },
-  preHook: async (options) => {
-    const branch = await parseBranch();
-    if (branch) options.defaultEnv = branch;
-    return options;
-  },
+  defaultOptions: defaultCliOptions,
   postHook: async () =>
     await getAwsSsoCredentials(process.env.AWS_LOCAL_PROFILE),
 })
