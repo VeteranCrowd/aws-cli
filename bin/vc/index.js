@@ -42,6 +42,7 @@ const local = new Command()
 
 const cli = getCli({
   defaultOptions: {
+    cliInvocation: 'vc',
     defaultEnv: 'dev',
     dynamicPath: './env/dynamic.js',
     paths: './ ./env',
