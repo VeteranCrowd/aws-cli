@@ -41,17 +41,17 @@ const aws = new Command()
   .addCommand(redrive);
 
 // Load default options.
-const cliDefaultOptionsGlobalPath = resolve(
+const cliDefaultOptionsCustomPath = resolve(
   __dirname,
   '../../getdotenv.config.json'
 );
 
-const cliDefaultOptionsGlobal = (await fs.exists(cliDefaultOptionsGlobalPath))
-  ? JSON.parse(await fs.readFile(cliDefaultOptionsGlobalPath))
+const cliDefaultOptionsCustom = (await fs.exists(cliDefaultOptionsCustomPath))
+  ? JSON.parse(await fs.readFile(cliDefaultOptionsCustomPath))
   : {};
 
 const cli = getDotenvCli({
-  ...cliDefaultOptionsGlobal,
+  ...cliDefaultOptionsCustom,
   preHook: async (options) => {
     const defaultEnv = await getDefaultEnv();
     if (defaultEnv) options.defaultEnv = defaultEnv;
