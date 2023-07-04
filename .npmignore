@@ -1,5 +1,9 @@
 # project settings
 .vscode/
+.lefthook/
+env/
+.env
+lefthook.yml
 
 # babel settings
 .babelrc

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 // npm imports
-import { getCli } from '@karmaniverous/get-dotenv';
+import { getDotenvCli } from '@karmaniverous/get-dotenv';
 import { Command } from 'commander';
 
 // lib imports
@@ -13,8 +13,8 @@ import { pullSecret } from '../../lib/aws/pullSecret.js';
 import { pushAmplify } from '../../lib/aws/pushAmplify.js';
 import { pushSecret } from '../../lib/aws/pushSecret.js';
 import { redrive } from '../../lib/aws/redrive.js';
-import { defaultCliOptions } from '../../lib/defaultOptions.js';
 import { getAwsSsoCredentials } from '../../lib/getAwsSsoCredentials.js';
+import { getDefaultEnv } from '../../lib/getDefaultEnv.js';
 
 const aws = new Command()
   .name('aws')
@@ -22,6 +22,10 @@ const aws = new Command()
   .configureHelp({ showGlobalOptions: true })
   .enablePositionalOptions()
   .passThroughOptions()
+  .hook('preSubcommand', async () => {
+    if (process.env.AWS_LOCAL_PROFILE)
+      await getAwsSsoCredentials(process.env.AWS_LOCAL_PROFILE);
+  })
   .addCommand(pullSecret)
   .addCommand(pushSecret)
   .addCommand(deleteSecret)
@@ -31,13 +35,12 @@ const aws = new Command()
   .addCommand(pushAmplify)
   .addCommand(redrive);
 
-const cli = getCli({
-  defaultOptions: defaultCliOptions,
-  postHook: async () => {
-    if (process.env.AWS_LOCAL_PROFILE)
-      await getAwsSsoCredentials(process.env.AWS_LOCAL_PROFILE);
+const cli = getDotenvCli({
+  preHook: async (options) => {
+    const defaultEnv = await getDefaultEnv();
+    if (defaultEnv) options.defaultEnv = defaultEnv;
+    return options;
   },
-})
-  .addCommand(aws)
+}).addCommand(aws);
 
 await cli.parseAsync();
