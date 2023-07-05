@@ -16,7 +16,7 @@
   "pathsDelimiter": " ",
   "pathsDelimiterPattern": "\\s+",
   "privateToken": "local",
-  "vars": "",
+  "vars": "LOG_LEVEL=info",
   "varsAssignor": "=",
   "varsAssignorPattern": "=",
   "varsDelimiter": " ",
