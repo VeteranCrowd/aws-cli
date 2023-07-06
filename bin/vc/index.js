@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 // npm imports
+import { Logger } from '@karmaniverous/edge-logger';
 import { getDotenvCli } from '@karmaniverous/get-dotenv';
 import { Command } from 'commander';
 import fs from 'fs-extra';
@@ -52,6 +53,7 @@ const cliDefaultOptionsCustom = (await fs.exists(cliDefaultOptionsCustomPath))
 
 const cli = getDotenvCli({
   ...cliDefaultOptionsCustom,
+  logger: new Logger(),
   preHook: async (options) => {
     const defaultEnv = await getDefaultEnv();
     if (defaultEnv) options.defaultEnv = defaultEnv;
