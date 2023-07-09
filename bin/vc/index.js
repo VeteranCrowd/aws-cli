@@ -9,6 +9,8 @@ import { fileURLToPath } from 'url';
 
 // lib imports
 import { aws } from '../../lib/aws/index.js';
+import { bulk } from '../../lib/bulk/index.js';
+import { dc } from '../../lib/depcheck.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -33,6 +35,9 @@ const cli = getDotenvCli({
     if (defaultEnv) options.defaultEnv = defaultEnv;
     return options;
   },
-}).addCommand(aws);
+})
+  .addCommand(aws)
+  .addCommand(bulk)
+  .addCommand(dc);
 
 await cli.parseAsync();
