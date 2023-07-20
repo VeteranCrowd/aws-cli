@@ -49,6 +49,7 @@
     "babel-plugin-lodash": "^3.3.4",
     "chai": "^4.3.7",
     "concat-md": "^0.5.1",
+    "crlf": "^1.1.1",
     "eslint": "^8.45.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsdoc": "^46.4.4",
@@ -88,10 +89,10 @@
   },
   "scripts": {
     "build": "babel lib -d dist/default/lib --delete-dir-on-start --config-file ./dist/default/.babelrc",
-    "doc": "jsdoc2md -c doc/jsdoc.config.json -f lib/**/*.* -t doc/api-template.hbs > doc/3-api.jsdoc2.md && concat-md doc --hide-anchor-links > README.md",
+    "doc": "jsdoc2md -c doc/jsdoc.config.json -f lib/**/*.* -t doc/api-template.hbs > doc/3-api.jsdoc2.md && concat-md doc --hide-anchor-links > README.md && crlf --set=CRLF README.md",
     "lint": "eslint lib/** bin/**",
     "prerelease": "npm run lint && npm run test && npm run build && npm run doc",
-    "release": "release-it",
+    "release": "node ./bin/vc release-it",
     "test": "node ./bin/vc mocha"
   },
   "type": "module"
