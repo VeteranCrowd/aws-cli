@@ -46,6 +46,7 @@
     "@babel/plugin-syntax-import-assertions": "^7.22.5",
     "@babel/preset-env": "^7.22.9",
     "@babel/register": "^7.22.5",
+    "auto-changelog": "^2.4.0",
     "babel-plugin-lodash": "^3.3.4",
     "chai": "^4.3.7",
     "concat-md": "^0.5.1",
@@ -58,7 +59,7 @@
     "jsdoc-to-markdown": "^8.0.0",
     "lefthook": "^1.4.6",
     "mocha": "^10.2.0",
-    "release-it": "^16.1.2"
+    "release-it": "^16.1.3"
   },
   "exports": {
     ".": {
@@ -80,8 +81,26 @@
     "timeout": 60000
   },
   "release-it": {
+    "git": {
+      "changelog": "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/main/templates/changelog-compact.hbs",
+      "requireBranch": "dev",
+      "commitMessage": "chore: release v${version}"
+    },
     "github": {
       "release": true
+    },
+    "hooks": {
+      "after:init": [
+        "nr lint",
+        "nr test",
+        "nr build",
+        "nr doc"
+      ],
+      "after:release": [
+        "git switch -c release/${version}",
+        "git push -u origin release/${version}",
+        "git switch dev"
+      ]
     },
     "npm": {
       "publish": true
@@ -91,7 +110,6 @@
     "build": "babel lib -d dist/default/lib --delete-dir-on-start --config-file ./dist/default/.babelrc",
     "doc": "jsdoc2md -c doc/jsdoc.config.json -f lib/**/*.* -t doc/api-template.hbs > doc/3-api.jsdoc2.md && concat-md doc --hide-anchor-links > README.md && crlf --set=CRLF README.md",
     "lint": "eslint lib/** bin/**",
-    "prerelease": "npm run lint && npm run test && npm run build && npm run doc",
     "release": "node ./bin/vc release-it",
     "test": "node ./bin/vc mocha"
   },
