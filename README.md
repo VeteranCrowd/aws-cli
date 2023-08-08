@@ -53,7 +53,6 @@ Commands:
 
 # API Documentation
 
-
 ---
 
 See more great templates and other tools on
