@@ -3,7 +3,7 @@
   "bin": {
     "vc": "bin/vc/index.js"
   },
-  "version": "5.0.1",
+  "version": "5.0.2",
   "publishConfig": {
     "access": "public"
   },
