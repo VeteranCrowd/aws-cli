@@ -24,6 +24,7 @@
   "plugins": ["mocha", "promise"],
   "rules": {
     "import/extensions": ["error", "ignorePackages"],
+    "import/no-unresolved": "off",
     "jsdoc/check-tag-names": "off",
     "mocha/no-top-level-hooks": "off"
   },
