@@ -16,9 +16,6 @@
   "pathsDelimiter": " ",
   "pathsDelimiterPattern": "\\s+",
   "privateToken": "local",
-  "shellScripts": {
-    "git-status": "git branch --show-current && git status -s -u"
-  },
   "vars": "LOG_LEVEL=info",
   "varsAssignor": "=",
   "varsAssignorPattern": "=",
