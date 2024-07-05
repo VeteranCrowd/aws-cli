@@ -1,8 +1,3 @@
-[//]: # (****************************** DO NOT EDIT ****************************** )
-[//]: # (This code and all related intellectual property is owned by Veteran Crowd )
-[//]: # (Rewards, LLC. It is not to be disclosed, copied or used without written )
-[//]: # (permission.)
-[//]: # (*************************************************************************)
 # Command Line Interface
 
 ```text

@@ -1,11 +1,3 @@
-/*
-****************************** DO NOT EDIT ****************************** 
-This code and all related intellectual property is owned by Veteran Crowd 
-Rewards, LLC. It is not to be disclosed, copied or used without written 
-permission.
-*************************************************************************
-*/
-
 () => ({
   API_VERSION: () => `v0`,
   // `v${(process.env.npm_package_version ?? '').split('.')[0]}`,
