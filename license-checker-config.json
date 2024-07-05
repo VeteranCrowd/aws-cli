@@ -4,24 +4,33 @@
       "prepend": "# "
     }
   },
-  "ignore": ["license.txt", ".lefthook/"],
+  "ignore": [
+    "license.txt",
+    ".lefthook/",
+    "*/**/.terraform.lock.hcl",
+    "*/**/.terraform/*",
+    "next-env.d.ts"
+  ],
   "ignoreFile": "./.gitignore",
   "license": "./license.txt",
   "licenseFormats": {
-    "md": {
+    "md|mdx": {
       "eachLine": {
-        "prepend": "[//]: # (",
-        "append": ")"
+        "prepend": "[//]: # ( ",
+        "append": " )"
       }
     },
     "hbs|html|xml|svg": {
       "prepend": "<!--",
       "append": "-->\n"
     },
-    "js|ts|css|scss|less|php|as|c|java|cpp|go|cto|acl|babelrc": {
+    "js|mjs|cjs|ts|tsx|css|scss|less|php|as|c|java|cpp|go|cto|acl|babelrc|hcl|tf|overrides|variables": {
       "prepend": "/*",
       "append": "*/\n"
+    },
+    "pu": {
+      "prepend": "/'",
+      "append": "'/\n"
     }
-  },
-  "trailingWhitespace": "TRIM"
+  }
 }
