@@ -7,9 +7,9 @@ pre-commit:
   scripts:
     branch-naming-policy:
       runner: bash
-    legal-notice-headers:
-      runner: bash
 prepare-commit-msg:
   scripts:
+    legal-notice-headers:
+      runner: bash
     add-jira-ticket:
       runner: bash
