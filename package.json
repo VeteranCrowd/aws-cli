@@ -3,7 +3,7 @@
   "bin": {
     "vc": "bin/vc/index.js"
   },
-  "version": "6.0.13",
+  "version": "6.1.0-1",
   "publishConfig": {
     "access": "public"
   },
@@ -118,7 +118,7 @@
     "knip": "knip",
     "lint": "eslint lib/** bin/**",
     "release": "node ./bin/vc release-it",
-    "release:pre": "vc -c \"release-it --no-git.requireBranch --github.prerelease --preRelease\"",
+    "release:pre": "release-it --no-git.requireBranch --github.prerelease --preRelease",
     "test": "node ./bin/vc mocha"
   },
   "type": "module"
