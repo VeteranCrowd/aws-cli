@@ -24,6 +24,7 @@
   "dependencies": {
     "@aws-sdk/client-amplify": "^3.609.0",
     "@aws-sdk/client-api-gateway": "^3.609.0",
+    "@aws-sdk/client-application-auto-scaling": "^3.614.0",
     "@aws-sdk/client-cloudwatch": "^3.609.0",
     "@aws-sdk/client-cognito-identity-provider": "^3.609.0",
     "@inquirer/confirm": "^3.1.12",
@@ -114,6 +115,7 @@
   },
   "scripts": {
     "build": "babel lib -d dist/default/lib --delete-dir-on-start --config-file ./dist/default/.babelrc",
+    "cli": "node ./bin/vc",
     "doc": "jsdoc2md -c doc/jsdoc.config.json -f lib/**/*.* -t doc/api-template.hbs > doc/3-api.jsdoc2.md && concat-md doc --hide-anchor-links > README.md && crlf --set=CRLF README.md",
     "knip": "knip",
     "lint": "eslint lib/** bin/**",
