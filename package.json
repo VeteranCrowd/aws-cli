@@ -118,7 +118,7 @@
     "knip": "knip",
     "lint": "eslint lib/** bin/**",
     "release": "node ./bin/vc release-it",
-    "release:pre": "vc -c \"release-it --no-git.requireBranch --github.prerelease --preRelease\"",
+    "release:pre": "release-it --no-git.requireBranch --github.prerelease --preRelease",
     "test": "node ./bin/vc mocha"
   },
   "type": "module"
