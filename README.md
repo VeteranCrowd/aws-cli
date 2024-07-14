@@ -15,6 +15,17 @@
 
 A handy CLI commands that supports common AWS operations.
 
+[//]: # ' ******************* DO NOT EDIT THIS NOTICE ***************** '
+[//]: # ' This code and all related intellectual property is owned by   '
+[//]: # ' Veteran Crowd Rewards, LLC. It is not to be disclosed, copied '
+[//]: # ' or used without written permission.                           '
+[//]: # ' ************************************************************* '
+[//]: # '************************ DO NOT EDIT THIS NOTICE ************************ '
+[//]: # 'This code and all related intellectual property is owned by Veteran Crowd '
+[//]: # 'Rewards, LLC. It is not to be disclosed, copied or used without written '
+[//]: # 'permission.'
+[//]: # '*************************************************************************'
+
 # Command Line Interface
 
 ```text
@@ -64,9 +75,27 @@ Commands:
   help [command]                      display help for command
 ```
 
+<!--
+******************* DO NOT EDIT THIS NOTICE *****************
+This code and all related intellectual property is owned by  
+Veteran Crowd Rewards, LLC. It is not to be disclosed, copied
+or used without written permission.                          
+*************************************************************
+-->
+
 # API Documentation
 
----
+
+[//]: # ' ******************* DO NOT EDIT THIS NOTICE ***************** '
+[//]: # ' This code and all related intellectual property is owned by   '
+[//]: # ' Veteran Crowd Rewards, LLC. It is not to be disclosed, copied '
+[//]: # ' or used without written permission.                           '
+[//]: # ' ************************************************************* '
+[//]: # '************************ DO NOT EDIT THIS NOTICE ************************ '
+[//]: # 'This code and all related intellectual property is owned by Veteran Crowd '
+[//]: # 'Rewards, LLC. It is not to be disclosed, copied or used without written '
+[//]: # 'permission.'
+[//]: # '*************************************************************************'
 
 See more great templates and other tools on
 [my GitHub Profile](https://github.com/karmaniverous)!
