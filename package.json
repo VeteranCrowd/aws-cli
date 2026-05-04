@@ -121,5 +121,6 @@
     "release:pre": "node ./bin/vc release-it --no-git.requireBranch --github.prerelease --preRelease",
     "test": "node ./bin/vc mocha"
   },
-  "type": "module"
+  "type": "module",
+  "files": ["lib", "dist", "bin"]
 }
