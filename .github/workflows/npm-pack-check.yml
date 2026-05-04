@@ -1,0 +1,11 @@
+name: npm Pack Check
+
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [dev]
+
+jobs:
+  pack-check:
+    uses: karmaniverous/gha-workflows/.github/workflows/npm-pack-check.yml@main
