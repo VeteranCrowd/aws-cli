@@ -3,7 +3,7 @@
   "bin": {
     "vc": "bin/vc/index.js"
   },
-  "version": "6.2.1",
+  "version": "6.2.2",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
