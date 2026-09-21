@@ -3,7 +3,7 @@
   "bin": {
     "vc": "bin/vc/index.js"
   },
-  "version": "6.2.2",
+  "version": "6.3.0-alpha.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
@@ -32,7 +32,7 @@
     "@inquirer/confirm": "^3.2.0",
     "@karmaniverous/edge-logger": "^1.3.12",
     "@karmaniverous/get-dotenv": "^4.5.2",
-    "@veterancrowd/wrapped-dynamodb-client": "^1.8.0",
+    "@veterancrowd/wrapped-dynamodb-client": "^1.10.0",
     "@veterancrowd/wrapped-secrets-manager-client": "^0.4.24",
     "@veterancrowd/wrapped-sqs-client": "^0.5.10",
     "commander": "^14.0.1",
@@ -120,7 +120,9 @@
     "knip": "knip",
     "lint": "eslint lib/** bin/**",
     "release": "node ./bin/vc release-it",
-    "release:pre": "node ./bin/vc release-it --no-git.requireBranch --github.prerelease --preRelease",
+    "release:pre-minor": "vc -c \"release-it minor --no-git.requireBranch --github.prerelease --preRelease=alpha\"",
+    "release:pre-patch": "vc -c \"release-it patch --no-git.requireBranch --github.prerelease --preRelease=alpha\"",
+    "release:print-next-version": "release-it --release-version --no-git.requireBranch --no-git.requireUpstream --no-git.requireCleanWorkingDir --no-hooks",
     "test": "node ./bin/vc mocha"
   },
   "type": "module",
