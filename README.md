@@ -75,6 +75,32 @@ Commands:
   help [command]                      display help for command
 ```
 
+# Migration & purge safety
+
+Every service keeps a runtime state record (`entityPK: config`, `entitySK: 0`) in
+its own stack table. Setting `crudDisabled` there suppresses that service's CRUD
+side effects — metric journals, financial journals and message dispatch — until it
+is cleared. It is read and written through the service's `GET`/`PUT admin/config`
+endpoints, and it takes effect without a deploy.
+
+This matters to anything that writes straight to a stack table, because the CRUD
+handler runs behind the table's stream: a migration's own records look exactly
+like a request's. `migrate-data` and `purge-table` therefore disable CRUD on the
+target table before they write, wait out the boundary second, skip the source's
+state records, and re-enable it when they are done. `migrate-data
+--keep-crud-disabled` leaves it disabled so the result can be inspected first.
+
+A failed re-enable leaves the service disabled on purpose (nothing expires
+automatically) and fails the command, so it shows up in both the log and the
+build.
+
+Ad hoc scripts (`vc -e <env> aws -c "..."`) that write directly must do one of:
+
+- stamp `updated` and `updater` the way a service write does — a fresh stamp is
+  treated as a live write, so its journals and messages fire as usual; or
+- wrap the writes in the state endpoints: `PUT {crudDisabled:true}`, wait a
+  second, write, wait a second, `PUT {crudDisabled:false}`.
+
 <!--
 ******************* DO NOT EDIT THIS NOTICE *****************
 This code and all related intellectual property is owned by  
